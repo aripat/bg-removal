@@ -203,19 +203,19 @@ def bg_processing(images_folder, dest_folder, bg_folder=None, overlay=True, png_
 
 
 def main():
-    directories = os.listdir('test_trashnet')
+    directories = os.listdir('images')
     for dir in directories:
         # path e creazione della directory di destinazione dei risultati finali
-        dest_folder = 'test_trashnet_new_bg/' + dir
+        dest_folder = 'images_new_bg/' + dir
         if not os.path.exists(dest_folder):
             os.makedirs(dest_folder)
 
         # path e creazione della directory dei png
-        png_folder = 'test_trashnet_png/' + dir
+        png_folder = 'images_png/' + dir
         if not os.path.exists(png_folder):
             os.makedirs(png_folder)
 
-        dir = 'test_trashnet/' + dir
+        dir = 'images/' + dir
         bg_processing(dir, dest_folder=dest_folder, bg_folder='backgrounds', png_folder=png_folder)
     cv2.destroyAllWindows()
 
